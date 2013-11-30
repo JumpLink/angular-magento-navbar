@@ -10,13 +10,23 @@
       a(href="#/admin").navbar-brand Bugwelder Admin
     .collapse.navbar-collapse.navbar-ex1-collapse
       ul.nav.navbar-nav
-        li: a(href="#/admin/barcode-scanner") Barcode-Scanner
+        li.dropdown
+          a(href="#", data-toggle="dropdown", dropdown-toggle) {{ 'Products' | translate }}
+            b.caret
+          ul.dropdown-menu
+            li: a(href="#/admin/product/config") Config
+            li: a(href="#/admin/product/list") List
+            li: a(href="#/admin/product/info") Info
+            li: a(href="#/admin/product/vwheritage-list") VWHeritage List
+            li: a(href="#/admin/product/vwheritage-info") VWHeritage Info
         li.dropdown
           a(href="#", data-toggle="dropdown", dropdown-toggle) User
             b.caret
           ul.dropdown-menu
             li: a(href="#/admin/user") Index
+            li: a(href="#/admin/user/signin") {{ 'Signin' | translate }}
             li: a(href="#/admin/user/create") {{ 'Create' | translate }}
+        li: a(href="#/admin/cache") Cache
         li: a(href="#/site-notice") {{ 'Site notice' | translate }}
       ul.nav.navbar-nav.navbar-right
         li
